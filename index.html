@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="res/ico/van.png" style="height: 35px; ">
+            <h1>City Gal Transportation</h1>
+        </div>
+        <!-- TODO: ham menu -->
+        <div class="menu">
+            <a href="#a">What we do</a>
+            <a href="#b">Who we are</a>
+            <a class="primary-button" href="#c">Request a ride</a>
+        </div>
+        <div id="hamburger-nav" class="hamburger-menu">
+            <a href="javascript:void(0)" onclick="toggleNav()"><img src="res/ico/menu-icon.svg" style="height: 40%; "></a>
+            <a href="javascript:void(0)" onclick="toggleNav()" class="hidden"><img src="res/ico/cross.svg" style="height: 50%; "></a>
+        </div>
+    </nav>
+    <div id="nav-overlay" class="overlay">
+        <a href="#a">What we do</a>
+        <a href="#b">Who we are</a>
+        <a class="primary-button" href="#c">Request a ride</a>
+    </div>
+    <section class="hero">
+        <div class="text">
+            <h1>Travel <mark>Northfield</mark> with no restrictions.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat.</p>
+            <div class="cta">
+                <a class="primary-button" href="#d">See our rates</a>
+                <a class="secondary-button" href="#e">Request a ride</a>
+            </div>
+        </div>
+        <div class="image" style="height: 500px; ">
+            <img src="res/img/placeholder.jpeg">
+        </div>
+    </section>
+    <section class="about">
+        <h1>What do we do?</h1>
+        <p>We provide transportation within <mark>50 miles</mark> of Northfield for</p>
+    </section>
+</body>
