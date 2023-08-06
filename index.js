@@ -24,26 +24,36 @@ function toggleNav() {
     navOpen = !navOpen;
 }
 
-function testEmail() {
-    var message = {
-        to: "josh.chasnov@gmail.com",
-        subject: "Hello",
-        body: "This is the body of the email."
-    };
-
-    var request = gapi.client.gmail.users.messages.send({
-    userId: "me",
-    resource: {
-        raw: btoa(
-        "To: " + message.to + "\r\n" +
-        "Subject: " + message.subject + "\r\n\r\n" +
-        message.body
-        )
-    }
+window.onload = function() {
+    element = document.getElementById("phone-input");
+    element.addEventListener("keydown", function(event) {
+        if (event.key != 'Backspace' && (element.value.length === 3 || element.value.length === 7)){
+            element.value += '-';
+        }
     });
 
-    request.execute(function(response) {
-    console.log(response);
-    // Handle the response
+    setInputFilter(element, function(value) {
+        return /^\d{0,3}\-{0,1}\d{0,3}\-{0,1}\d{0,4}$/.test(value);
     });
 }
+
+// https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
+function setInputFilter(textbox, inputFilter) {
+    [ "input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop", "focusout" ].forEach(function(event) {
+        textbox.addEventListener(event, function(e) {
+            if (inputFilter(this.value)) {
+                // Accepted value.
+                this.oldValue = this.value;
+                this.oldSelectionStart = this.selectionStart;
+                this.oldSelectionEnd = this.selectionEnd;
+            } else if (this.hasOwnProperty("oldValue")) {
+                // Rejected value: restore the previous one.
+                this.value = this.oldValue;
+                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            } else {
+                // Rejected value: nothing to restore.
+                this.value = "";
+            }
+        });
+    });
+} 
