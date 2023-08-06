@@ -8,6 +8,9 @@
     <title>Website</title>
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
+
+    <!-- Dependencies -->
+    <script src="https://apis.google.com/js/api.js"></script>
 </head>
 
 <body>
@@ -16,7 +19,6 @@
             <img src="res/ico/van.png" style="height: 35px; ">
             <h1>City Gal Transportation</h1>
         </div>
-        <!-- TODO: ham menu -->
         <div class="menu">
             <a href="#a">What we do</a>
             <a href="#b">Who we are</a>
@@ -46,7 +48,42 @@
         </div>
     </section>
     <section class="about">
-        <h1>What do we do?</h1>
-        <p>We provide transportation within <mark>50 miles</mark> of Northfield for</p>
+        <div class="container">
+            <div class="panel">
+                <img src="res/ico/taxi.svg" style="height: 30px; ">
+                <h1>Taxi</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elit libero, ultricies et laoreet at, blandit ut neque. Duis sem. </p>
+            </div>
+            <div class="panel">
+                <img src="res/ico/airplane.svg" style="height: 30px; ">
+                <h1>Airport</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elit libero, ultricies et laoreet at, blandit ut neque. Duis sem. </p>
+            </div>
+            <div class="panel">
+                <img src="res/ico/medical.svg" style="height: 30px; ">
+                <h1>Medical</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elit libero, ultricies et laoreet at, blandit ut neque. Duis sem. </p>
+            </div>
+        </div>
+    </section>
+    <section class="location">
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71012.4790054075!2d-93.22582378670278!3d44.45158629617646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f653c36e566ca1%3A0x7acc799d75f938af!2sNorthfield%2C%20MN%2055057%2C%20USA!5e0!3m2!1sen!2shk!4v1691219892401!5m2!1sen!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="text">
+            <h2>From Northfield, for Northfield.</h2>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor viverra vulputate. In vitae fermentum velit. Sed sit amet enim cursus, laoreet ipsum in, auctor justo. Aenean rhoncus interdum sem eu efficitur. Quisque aliquam lacus diam, non finibus massa iaculis sit amet. Proin hendrerit odio eu nisl fermentum efficitur. Fusce tempus mi eget dapibus pretium. Integer viverra ipsum quis suscipit finibus. Ut semper risus sed ex pellentesque pharetra. Quisque iaculis nibh tortor, nec vestibulum nisl cursus sit amet. Aliquam erat volutpat.
+        </div>
+    </section>
+    <section class="owner">
+        <div class="container">
+            <div class="portrait">
+                <img src="res/img/placeholder.jpeg" style="height: 200px; ">
+            </div>
+            <div class="info">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis accumsan turpis, quis vestibulum nisi ornare sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h1>Contact us</h1>
     </section>
 </body>

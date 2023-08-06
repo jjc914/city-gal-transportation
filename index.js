@@ -23,3 +23,27 @@ function toggleNav() {
     });
     navOpen = !navOpen;
 }
+
+function testEmail() {
+    var message = {
+        to: "josh.chasnov@gmail.com",
+        subject: "Hello",
+        body: "This is the body of the email."
+    };
+
+    var request = gapi.client.gmail.users.messages.send({
+    userId: "me",
+    resource: {
+        raw: btoa(
+        "To: " + message.to + "\r\n" +
+        "Subject: " + message.subject + "\r\n\r\n" +
+        message.body
+        )
+    }
+    });
+
+    request.execute(function(response) {
+    console.log(response);
+    // Handle the response
+    });
+}
