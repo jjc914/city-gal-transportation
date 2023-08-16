@@ -6,13 +6,13 @@ export default async function contactUs(req, res) {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'noreply.citygaltransportation@gmail.com',
-            pass: 'dbzstahgrvmruwlh',
+            user: process.env.EMAIL_ADDRESS,
+            pass: process.env.EMAIL_PASSWORD,
         },
     });
 
     const mailOptions = {
-        from: 'noreply.citygaltransportation@gmail.com',
+        from: process.env.EMAIL_ADDRESS,
         to: 'josh.chasnov@gmail.com',
         subject: 'EMAIL_SUBJECT',
         text: 'EMAIL_CONTENT',
