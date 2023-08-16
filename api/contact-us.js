@@ -1,15 +1,15 @@
 const { google } = require('googleapis');
 
 // api/contact-us
-export default function contactUs(req, res) {
-    sendEmail();
+export default async function contactUs(req, res) {
+    await sendEmail();
     res.statusCode = 200;
     res.json({ message: 'AHHHH' });
 }
 
 async function sendEmail() {
     // Load the service account credentials
-    // const credentials = require('developer-395015-1424828da512.json');
+    const credentials = require('./developer-395015-1424828da512.json');
   
     // // Configure the JWT client
     // const jwtClient = new google.auth.JWT(
