@@ -1,5 +1,5 @@
 // const { google } = require('googleapis');
-const { nodemailer } = require('nodemailer');
+const nodemailer = require('nodemailer');
 
 // api/contact-us
 export default async function contactUs(req, res) {
@@ -7,7 +7,7 @@ export default async function contactUs(req, res) {
         service: 'gmail',
         auth: {
             user: 'noreply.citygaltransportation@gmail.com',
-            pass: 'SoulPileHighChimneyEdge',
+            pass: 'dbzstahgrvmruwlh',
         },
     });
 
