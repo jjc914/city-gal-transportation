@@ -8,14 +8,14 @@ export default async function contactUs(req, res) {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.EMAIL_ADDRESS,
-            pass: process.env.EMAIL_PASSWORD,
+            user: 'noreply.citygaltransportation@gmail.com',
+            pass: 'SoulPileHighChimneyEdge',
         },
     });
 
     const mailOptions = {
-        from: 'SENDER_EMAIL_ADDRESS',
-        to: 'RECIPIENT_EMAIL_ADDRESS',
+        from: 'noreply.citygaltransportation@gmail.com',
+        to: 'josh.chasnov@gmail.com',
         subject: 'EMAIL_SUBJECT',
         text: 'EMAIL_CONTENT',
     };
@@ -23,8 +23,12 @@ export default async function contactUs(req, res) {
     transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
             console.error('Error sending email:', error);
+            res.statusCode = 200;
+            res.json({ message: error });
         } else {
             console.log('Email sent:', info.response);
+            res.statusCode = 200;
+            res.json({ message: 'email sent' });
         }
     });
       
