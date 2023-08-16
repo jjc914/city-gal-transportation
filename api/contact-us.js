@@ -3,13 +3,13 @@ const { nodemailer } = require('nodemailer');
 
 // api/contact-us
 export default async function contactUs(req, res) {
-    // const transporter = nodemailer.createTransport({
-    //     service: 'gmail',
-    //     auth: {
-    //         user: 'noreply.citygaltransportation@gmail.com',
-    //         pass: 'SoulPileHighChimneyEdge',
-    //     },
-    // });
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'noreply.citygaltransportation@gmail.com',
+            pass: 'SoulPileHighChimneyEdge',
+        },
+    });
 
     // const mailOptions = {
     //     from: 'noreply.citygaltransportation@gmail.com',
