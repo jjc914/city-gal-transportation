@@ -10,8 +10,8 @@ export default async function contactUs(req, res) {
             pass: process.env.EMAIL_PASSWORD,
         },
     });
-    res.statusCode = 200;
-    res.json({ message: process.env.EMAIL_ADDRESS + ' ' + process.env.EMAIL_PASSWORD });
+    // res.statusCode = 200;
+    // res.json({ message: process.env.EMAIL_ADDRESS + ' ' + process.env.EMAIL_PASSWORD });
 
     const mailOptions = {
         from: process.env.EMAIL_ADDRESS,
