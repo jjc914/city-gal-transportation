@@ -3,8 +3,6 @@ const { nodemailer } = require('nodemailer');
 
 // api/contact-us
 export default async function contactUs(req, res) {
-    require('dotenv').config();
-
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
