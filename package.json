@@ -1,0 +1,23 @@
+{
+  "name": "city-gal-transportation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjc914/city-gal-transportation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjc914/city-gal-transportation/issues"
+  },
+  "homepage": "https://github.com/jjc914/city-gal-transportation#readme",
+  "dependencies": {
+    "googleapis": "125.0.0"
+  }
+}
