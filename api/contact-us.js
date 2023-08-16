@@ -11,26 +11,26 @@ export default async function contactUs(req, res) {
         },
     });
 
-    // const mailOptions = {
-    //     from: 'noreply.citygaltransportation@gmail.com',
-    //     to: 'josh.chasnov@gmail.com',
-    //     subject: 'EMAIL_SUBJECT',
-    //     text: 'EMAIL_CONTENT',
-    // };
+    const mailOptions = {
+        from: 'noreply.citygaltransportation@gmail.com',
+        to: 'josh.chasnov@gmail.com',
+        subject: 'EMAIL_SUBJECT',
+        text: 'EMAIL_CONTENT',
+    };
       
-    // transporter.sendMail(mailOptions, function(error, info) {
-    //     if (error) {
-    //         console.error('Error sending email:', error);
-    //         res.statusCode = 200;
-    //         res.json({ message: error });
-    //     } else {
-    //         console.log('Email sent:', info.response);
-    //         res.statusCode = 200;
-    //         res.json({ message: 'email sent' });
-    //     }
-    // });
-    res.statusCode = 200;
-    res.json({ message: 'wahwaH' });
+    transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            console.error('Error sending email:', error);
+            res.statusCode = 200;
+            res.json({ message: error });
+        } else {
+            console.log('Email sent:', info.response);
+            res.statusCode = 200;
+            res.json({ message: 'email sent' });
+        }
+    });
+    // res.statusCode = 200;
+    // res.json({ message: 'wahwaH' });
       
 
     // Load the service account credentials
