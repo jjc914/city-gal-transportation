@@ -29,8 +29,8 @@ async function sendEmail() {
       // Construct the email message
       const email = {
         raw: btoa(
-          'From: YOUR_EMAIL_ADDRESS\r\n' +
-          'To: RECIPIENT_EMAIL_ADDRESS\r\n' +
+          'From: noreply@developer-395015.iam.gserviceaccount.com\r\n' +
+          'To: josh.chasnov@gmail.com\r\n' +
           'Subject: EMAIL_SUBJECT\r\n' +
           'Content-Type: text/plain; charset=utf-8\r\n\r\n' +
           'EMAIL_CONTENT'
