@@ -279,10 +279,9 @@ section {
 
 .location {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 20px;
+    justify-content: center;
+    background-color: white;
 }
 
 .location .map {
@@ -293,16 +292,37 @@ section {
     width: 500px;
 }
 
+/* Owner for desktop */
+@media screen and (min-width: 820px) {
+    .location {
+        flex-direction: row;
+        gap: 3%;
+    }
+}
+
+/* Owner for mobile */
+@media screen and (max-width: 820px) {
+    .location {
+        flex-direction: column;
+    }
+
+    .location .map {
+        width: 100%;
+    }
+
+    .location .text {
+        width: 100%;
+    }
+}
+
 .owner {
-    position: relative;
+    background-color: var(--accent-color-light);
 }
 
 .owner .container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 50%;
+    width: 100%;
+    height: auto;
+    text-align: center;
 }
 
 .owner .container .portrait {
@@ -310,61 +330,65 @@ section {
     height: 170px;
     border-radius: 50%;
     overflow: hidden;
-    position: absolute;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    outline-color: white;
+    outline-width: 8px;
+    outline-style: solid;
+    transform: translateX(20px);
+    z-index: 1;
 }
-    
+
 .owner .container .portrait img {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
+    
+.owner .container .info .text h1 {
+    margin: 0px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 1.4em;
+}
 
-.owner .container .info {
-    background-color: var(--accent-color-light);
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    font-size: 2em;
+.owner .container .info .text h1 mark {
+    font-weight: 600;
+    background-color: inherit;
+    font-size: 1.3em;
+}
+
+.owner .container .info .text p {
+    margin: 0px;
+    text-align: left;
 }
 
 /* Owner for desktop */
-@media screen and (min-width: 820px) {
-    .owner {
-        height: 400px;
-    }
-    
-    .owner .container .portrait {
-        right: 0;
-        top: 50%;
-        transform: translateX(70%) translateY(-50%);
-    }
-    
+@media screen and (min-width: 780px) {
     .owner .container .info {
-        padding-left: 20px;
-        padding-right: 70px;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        width: 60%;
+        background-color: white;
+        margin: auto;
+        border-radius: 8px;
+        display: inline-block;
+        transform: translateX(-20px);
+        vertical-align: middle;
+        z-index: 0;
+    }
+    
+    .owner .container .info .text {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-right: 20px;
+        margin-left: 70px;
     }
 }
 
-/* Owner for mobile */
-@media screen and (max-width: 820px) {
-    .owner {
-        height: 800px;
-    }
-    
-    .owner .container .portrait {
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%) translateY(-70%);
-    }
-    
+@media screen and (max-width: 780px) {
     .owner .container .info {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 70px;
-        padding-bottom: 30px;
+        margin-top: 15px;
     }
 }
 
