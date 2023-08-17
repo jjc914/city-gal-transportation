@@ -60,7 +60,7 @@ function setInputFilter(textbox, inputFilter) {
 } 
 
 function onSendContactUs() {
-    const url = `${ROOT_URL}/api/endpoint`;
+    const url = `${ROOT_URL}/api/contact-us`;
     const data = {
         name: 'John Doe',
         email: 'johndoe@example.com'
