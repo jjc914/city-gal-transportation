@@ -62,8 +62,15 @@ function setInputFilter(textbox, inputFilter) {
 function onSendContactUs() {
     const url = `${ROOT_URL}/api/contact-us`;
     const data = {
-        name: 'John Doe',
-        email: 'johndoe@example.com'
+        'first-name': '',
+        'last-name': '',
+        'phone-number': '',
+        'email': 'johndoe@example.com',
+        'pick-up': '',
+        'drop-off': '',
+        'flight': '',
+        'isRideshare': true,
+        'body': ''
     };
 
     fetch(url, {
