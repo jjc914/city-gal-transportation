@@ -2,9 +2,8 @@ const nodemailer = require('nodemailer');
 
 // api/contact-us
 export default async function contactUs(req, res) {
-    const { body } = req;
     res.statusCode = 200;
-    res.json({ message: body });
+    res.json({ message: req.name });
     // const transporter = nodemailer.createTransport({
     //     service: 'gmail',
     //     auth: {
