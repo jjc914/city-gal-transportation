@@ -16,6 +16,10 @@
     --seperator-color: #d8d8d8;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -316,7 +320,7 @@ section {
 }
 
 .owner {
-    background-color: var(--accent-color-light);
+    background-color: white;
 }
 
 .owner .container {
@@ -333,7 +337,7 @@ section {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    outline-color: white;
+    outline-color: var(--accent-color-light);
     outline-width: 8px;
     outline-style: solid;
     transform: translateX(20px);
@@ -369,7 +373,7 @@ section {
 @media screen and (min-width: 780px) {
     .owner .container .info {
         width: 60%;
-        background-color: white;
+        background-color: var(--accent-color-light);
         margin: auto;
         border-radius: 8px;
         display: inline-block;

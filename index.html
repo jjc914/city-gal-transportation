@@ -19,9 +19,9 @@
         <h1>City Gal Transportation</h1>
       </div>
       <div class="menu">
-        <a href="#a">What we do</a>
-        <a href="#b">Who we are</a>
-        <a class="primary-button" href="#c">Request a ride</a>
+        <a href="#about">What we do</a>
+        <a href="#owner">Who we are</a>
+        <a class="primary-button" href="#contact">Request a ride</a>
       </div>
       <div id="hamburger-nav" class="hamburger-menu">
         <a href="javascript:void(0)" onclick="toggleNav()"
@@ -33,9 +33,9 @@
       </div>
     </nav>
     <div id="nav-overlay" class="overlay">
-      <a href="#a">What we do</a>
-      <a href="#b">Who we are</a>
-      <a class="primary-button" href="#c">Request a ride</a>
+      <a href="#about" onclick="toggleNav()">What we do</a>
+      <a href="#owner" onclick="toggleNav()">Who we are</a>
+      <a href="#contact" onclick="toggleNav()">Request a ride</a>
     </div>
     <section class="hero">
       <div class="text">
@@ -46,15 +46,15 @@
           our Northfield-native business has got your ride covered.
         </p>
         <div class="cta">
-          <a class="primary-button" href="#d">See our rates</a>
-          <a class="secondary-button" href="#e">Request a ride</a>
+          <a class="primary-button" href="#about">See our rates</a>
+          <a class="secondary-button" href="#contact">Request a ride</a>
         </div>
       </div>
       <div class="image">
         <img src="res/img/placeholder.jpeg" />
       </div>
     </section>
-    <section class="about">
+    <section id="about" class="about">
       <div class="container">
         <div class="panel">
           <img src="res/ico/taxi.svg" style="height: 30px" />
@@ -85,6 +85,22 @@
         </div>
       </div>
     </section>
+    <section id="owner" class="owner">
+      <div class="container">
+        <div class="portrait">
+          <img src="res/img/placeholder.jpeg" style="height: 200px" />
+        </div>
+        <div class="info">
+          <div class="text">
+            <h1><mark>Ginny Klinger</mark>, CEO</h1>
+            <p>
+              is the owner and primary operator of City Gal Transportation.
+              Ginny is a proud member of the Northfield Chamber of Commerce.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="location">
       <iframe
         class="map"
@@ -105,32 +121,7 @@
         Square.
       </div>
     </section>
-    <section class="owner">
-      <div class="container">
-        <div class="portrait">
-          <img src="res/img/placeholder.jpeg" style="height: 200px" />
-        </div>
-        <div class="info">
-          <div class="text">
-            <h1><mark>Ginny Klinger</mark>, CEO</h1>
-            <p>
-              is the owner and primary operator of City Gal Transportation.
-              Ginny is a proud member of the Northfield Chamber of Commerce.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="container">
-        <div class="portrait">
-          <img src="res/img/placeholder.jpeg" style="height: 200px" />
-        </div>
-        <div class="info">
-          Ginny Klinger is the owner and primary operator of City Gal Transportation.
-          Ginny is a proud member of the Northfield Chamber of Commerce.
-        </div>
-      </div> -->
-    </section>
-    <section class="contact">
+    <section id="contact" class="contact">
       <h1>Contact Us</h1>
       <div class="container">
         <p class="label">Name</p>
