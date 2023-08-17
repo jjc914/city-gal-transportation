@@ -18,8 +18,6 @@
   },
   "homepage": "https://github.com/jjc914/city-gal-transportation#readme",
   "dependencies": {
-    "googleapis": "125.0.0",
-    "nodemailer": "6.9.4",
-    "dotenv": "16.3.1"
+    "nodemailer": "6.9.4"
   }
 }

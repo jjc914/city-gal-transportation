@@ -1,4 +1,5 @@
-navOpen = false;
+const ROOT_URL = "https://city-gal-transportation.vercel.app";
+var navOpen = false;
 
 function toggleNav() {
     if (!navOpen) {
@@ -57,3 +58,16 @@ function setInputFilter(textbox, inputFilter) {
         });
     });
 } 
+
+function onSendContactUs() {
+    fetch(ROOT_URL + '/api/contact-us')
+    .then(response => response.json())
+    .then(data => {
+    // Process the response data
+        console.log(data);
+    })
+    .catch(error => {
+        // Handle any errors
+        console.error('Error:', error);
+    });
+}
