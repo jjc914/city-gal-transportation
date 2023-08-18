@@ -54,31 +54,31 @@ function formatPhone(digits) {
 
 function onSendContactUs() {
     console.log("aa");
-    // const url = `${ROOT_URL}/api/contact-us`;
-    // const data = {
-    //     'first-name': '',
-    //     'last-name': '',
-    //     'phone-number': '',
-    //     'email': 'johndoe@example.com',
-    //     'pick-up': '',
-    //     'drop-off': '',
-    //     'flight': '',
-    //     'isRideshare': true,
-    //     'body': ''
-    // };
+    const url = `${ROOT_URL}/api/contact-us`;
+    const data = {
+        'first-name': document.getElementById('first-name-form').value,
+        'last-name': document.getElementById('last-name-form').value,
+        'phone-number': document.getElementById('phone-form').value,
+        'email': document.getElementById('email-form').value,
+        'pick-up': document.getElementById('pick-up-form').value,
+        'drop-off': document.getElementById('drop-off-form').value,
+        'flight': document.getElementById('flight-form').value,
+        'isRideshare': document.getElementById('rideshare-checkbox').value,
+        'body': ''
+    };
 
-    // fetch(url, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    // })
-    // .then(response => response.json())
-    // .then(responseData => {
-    //     console.log('Response:', responseData);
-    // })
-    // .catch(error => {
-    //     console.error('Error:', error);
-    // });
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(responseData => {
+        console.log('Response:', responseData);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
