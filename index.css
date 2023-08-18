@@ -14,6 +14,7 @@
     --accent-color: #283EC8;
     --accent-color-light: #D3D8F9;
     --seperator-color: #d8d8d8;
+    --disabled-button-color: #dadada;
 }
 
 html {
@@ -452,8 +453,8 @@ section {
     display: inline-block;
     vertical-align: middle;
     text-align: center;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 .contact .container .phone-number .phone-number-form .prefix p {
@@ -461,7 +462,7 @@ section {
 }
 
 .contact .container .phone-number .phone-number-form .body {
-    transform: translateX(-1px);
+    transform: translateX(5px);
     border-radius: 0px 3px 3px 0px;
 }
 
@@ -503,13 +504,31 @@ section {
     background-color: inherit;
 }
 
-.contact .conatiner .submit {
-    width: 100%;
+.contact .container .submit {
+    /* margin: auto; */
+    /* width: 100%; */
+    text-align: center;
+}
+
+.loader {
+    display: inline-block;
+    border: 5px solid white; 
+    border-top: 5px solid var(--accent-color); 
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 2s linear infinite;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .contact .container .submit a {
-    margin: auto;
-    display: block;
+    display: inline-block;
     width: 70%;
     padding: 1em 2em;
     border-radius: 5px;
@@ -521,31 +540,31 @@ section {
     text-align: center;
 }
 
-.contact .submit a:hover {
+.contact .container .submit .disabled {
+    background-color: var(--disabled-button-color);
+    pointer-events: none;
+}
+
+.contact .container .submit a:not(.disabled):hover {
     background-color: var(--primary-color-highlight);
     transform: translateY(-3px);
 }
 
-.contact .carpool .is-carpool {
+.contact .container .carpool .is-carpool {
     display: inline;
     vertical-align: middle;
 }
 
-.contact .carpool h2 {
+.contact .container .carpool h2 {
     display: inline;
 }
 
-.contact .disclaimer p {
+.contact .container .disclaimer p {
     font-size: 0.7em;
     color: grey;
 }
 
-.contact .container .name * .form {
-    width: 100%;
-    /* padding: 0px; */
-}
-
-.contact .container .pick-up-drop-off-location * .form {
+.contact .container * * .form {
     width: 100%;
     /* padding: 0px; */
 }

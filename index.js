@@ -192,6 +192,9 @@ function onSendContactUs() {
     }
     if (!hasPassed) return;
 
+    document.getElementById('contact-submit-button').classList.add('disabled');
+    document.getElementById('contact-loader').classList.remove('hidden');
+
     const url = `${ROOT_URL}/api/contact-us`;
     const data = {
         'first-name': document.getElementById('first-name-form').value,
@@ -215,10 +218,14 @@ function onSendContactUs() {
     .then(response => response.json())
     .then(responseData => {
         console.log('Response:', responseData);
+        document.getElementById('contact-submit-button').classList.remove('disabled');
+        document.getElementById('contact-loader').classList.add('hidden');
         alert('Successfully contacted.');
     })
     .catch(error => {
         console.error('Error:', error);
+        document.getElementById('contact-submit-button').classList.remove('disabled');
+        document.getElementById('contact-loader').classList.add('hidden');
         alert('An error has occurred. Please try again.');
     });
 }
