@@ -3,13 +3,10 @@ const bodyParser = require('body-parser');
 
 // api/contact-us
 export default async function contactUs(req, res) {
+    console.log("Recieved contact us request. ");
     if (req.method === 'POST') {
         bodyParser.urlencoded({ extended: true }) (req, res, () => {
             const body = req.body;
-
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.json({ message: body });
 
             const transporter = nodemailer.createTransport({
                 service: 'gmail',

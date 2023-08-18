@@ -52,8 +52,146 @@ function formatPhone(digits) {
     return '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6, 10);
 }
 
+function getContactUsFormStatus() {
+    let forms = [];
+
+    const firstNameForm = document.getElementById('first-name-form');
+    const lastNameForm = document.getElementById('last-name-form');
+    const phoneForm = document.getElementById('phone-form');
+    const emailForm = document.getElementById('email-form');
+    const pickUpForm = document.getElementById('pick-up-form');
+    const dropOffForm = document.getElementById('drop-off-form');
+    const flightForm = document.getElementById('flight-form');
+    const commentsForm = document.getElementById('comments-form');
+
+    if (firstNameForm.value.trim() === '') {
+        forms.push({
+            'passed': false,
+            'form': firstNameForm,
+            'reason': 'empty'
+        });
+    } else {
+        forms.push({
+            'passed': true,
+            'form': firstNameForm
+        });
+    }
+    if (lastNameForm.value.trim() === '') {
+        forms.push({
+            'passed': false,
+            'form': lastNameForm,
+            'reason': 'empty'
+        });
+    } else {
+        forms.push({
+            'passed': true,
+            'form': lastNameForm
+        });
+    }
+    if (phoneForm.value.trim() === '') {
+        forms.push({
+            'passed': false,
+            'form': phoneForm,
+            'reason': 'empty',
+            'errorText': document.getElementById('phone-incomplete-error')
+        });
+    } else if (phoneForm.value.trim().length != 14) {
+        forms.push({
+            'passed': false,
+            'form': phoneForm,
+            'reason': 'incomplete',
+            'errorText': document.getElementById('phone-incomplete-error')
+        });
+    } else {
+        forms.push({
+            'passed': true,
+            'form': phoneForm,
+            'errorText': document.getElementById('phone-incomplete-error')
+        });
+    }
+    if (emailForm.value.trim() === '') {
+        forms.push({
+            'passed': false,
+            'form': emailForm,
+            'reason': 'empty',
+            'errorText': document.getElementById('email-incomplete-error')
+        });
+    } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(emailForm.value)) {
+        forms.push({
+            'passed': false,
+            'form': emailForm,
+            'reason': 'incomplete',
+            'errorText': document.getElementById('email-incomplete-error')
+        });
+    } else {
+        forms.push({
+            'passed': true,
+            'form': emailForm,
+            'errorText': document.getElementById('email-incomplete-error')
+        });
+    }
+    if (pickUpForm.value.trim() === '') {
+        forms.push({
+            'passed': false,
+            'form': pickUpForm,
+            'reason': 'empty'
+        });
+    } else {
+        forms.push({
+            'passed': true,
+            'form': pickUpForm
+        });
+    }
+    if (dropOffForm.value.trim() === '') {
+        forms.push({
+            'passed': false,
+            'form': dropOffForm,
+            'reason': 'empty'
+        });
+    } else {
+        forms.push({
+            'passed': true,
+            'form': dropOffForm
+        });
+    }
+    forms.push({
+        'passed': true,
+        'form': flightForm
+    });
+    forms.push({
+        'passed': true,
+        'form': commentsForm
+    });
+    
+    return forms;
+}
+
 function onSendContactUs() {
-    console.log("aa");
+    const requiredFormsError = document.getElementById('required-forms-error');
+
+    let hasEmpty = false;
+    let hasPassed = true;
+    getContactUsFormStatus().forEach((status) => {
+        if (status.passed) {
+            status.form.classList.remove('incomplete-form');
+            status.errorText?.classList.add('hidden');
+        } else {
+            status.form.classList.add('incomplete-form');
+            hasPassed = false;
+        }
+        if (status.reason === 'empty') {
+            requiredFormsError.classList.remove('hidden');
+            hasEmpty = true;
+        }
+        if (status.reason === 'incomplete') {
+            status.errorText.classList.remove('hidden');
+        }
+    });
+    if (!hasEmpty) {
+        requiredFormsError.classList.add('hidden');
+    }
+    if (!hasPassed) return;
+
     const url = `${ROOT_URL}/api/contact-us`;
     const data = {
         'first-name': document.getElementById('first-name-form').value,
@@ -64,7 +202,7 @@ function onSendContactUs() {
         'drop-off': document.getElementById('drop-off-form').value,
         'flight': document.getElementById('flight-form').value,
         'isRideshare': document.getElementById('rideshare-checkbox').value,
-        'body': ''
+        'body': document.getElementById('comments-form').value
     };
 
     fetch(url, {
@@ -77,8 +215,10 @@ function onSendContactUs() {
     .then(response => response.json())
     .then(responseData => {
         console.log('Response:', responseData);
+        alert('Successfully contacted.');
     })
     .catch(error => {
         console.error('Error:', error);
+        alert('An error has occurred. Please try again.');
     });
 }

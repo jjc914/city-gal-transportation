@@ -542,12 +542,12 @@ section {
 
 .contact .container .name * .form {
     width: 100%;
-    padding: 0px;
+    /* padding: 0px; */
 }
 
 .contact .container .pick-up-drop-off-location * .form {
     width: 100%;
-    padding: 0px;
+    /* padding: 0px; */
 }
 
 /* at 720px, change so that each form element takes one line */
@@ -555,14 +555,14 @@ section {
     .contact .container .name {
         display: grid;
         grid-template-columns: 40% 40%;
-        column-gap: 10px;
+        column-gap: 30px;
         row-gap: 2px;
     }
 
     .contact .container .pick-up-drop-off-location {
         display: grid;
         grid-template-columns: 45% 45%;
-        column-gap: 10px;
+        column-gap: 30px;
         row-gap: 2px;
     }
 }
@@ -583,6 +583,15 @@ section {
     }
 }
 
+.contact .container .incomplete-form {
+    border-color: red;
+}
+
+.contact .container .error {
+    font-size: 1em;
+    color: red;
+}
+
 .copywrite {
     background-color: white;
     text-align: center;
@@ -600,4 +609,8 @@ section {
 
 .copywrite p {
     font-size: 1em;
+}
+
+.hidden {
+    display: none;
 }

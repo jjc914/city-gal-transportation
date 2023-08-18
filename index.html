@@ -144,6 +144,7 @@
         <div class="email">
           <h2>Email address <mark>*</mark></h2>
           <input id="email-form" class="form" type="text" />
+          <div id="email-incomplete-error" class="error hidden">Please enter a valid email address. </div>
         </div>
         <div class="phone-number">
           <h2>Phone number <mark>*</mark></h2>
@@ -151,6 +152,7 @@
             <span class="form prefix"><p>+1</p></span>
             <input id="phone-form" class="form body" type="text" />
           </div>
+          <div id="phone-incomplete-error" class="error hidden">Please enter a valid phone number. </div>
         </div>
         <div class="pick-up-drop-off-location">
           <div class="pick-up-location">
@@ -173,6 +175,9 @@
         <div class="carpool">
           <input id="rideshare-checkbox" class="is-carpool" type="checkbox">
           <h2>If available, I would like to carpool. </h2>
+        </div>
+        <div id="required-forms-error" class="error hidden">
+          *Please fill out all required forms correctly before submitting.
         </div>
         <div class="submit">
           <a class="submit-button" href="javascript:void(0)" onclick="onSendContactUs()">Request a ride</a>
@@ -200,3 +205,5 @@
     </section>
   </body>
 </html>
+
+<!-- TODO: add email loading circle -->
