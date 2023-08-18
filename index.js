@@ -204,7 +204,7 @@ function onSendContactUs() {
         'pick-up': document.getElementById('pick-up-form').value,
         'drop-off': document.getElementById('drop-off-form').value,
         'flight': document.getElementById('flight-form').value,
-        'isRideshare': document.getElementById('rideshare-checkbox').value,
+        'isRideshare': document.getElementById('rideshare-checkbox').checked,
         'body': document.getElementById('comments-form').value
     };
 
