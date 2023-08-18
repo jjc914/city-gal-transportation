@@ -129,45 +129,73 @@
 
     <section id="contact" class="contact">
       <div class="container">
+        <h1>Contact us</h1>
         <div class="name">
-          <h2>First name</h2>
-          <h2>Last name</h2>
-          <input class="form" type="text" />
-          <input class="form" type="text" />
+          <div class="first-name">
+            <h2>First name <mark>*</mark></h2>
+            <input class="form" type="text" />
+          </div>
+          <div class="last-name">
+            <h2>Last name <mark>*</mark></h2>
+            <input class="form" type="text" />
+          </div>
         </div>
         <div class="email">
-          <h2>Email address</h2>
+          <h2>Email address <mark>*</mark></h2>
           <input class="form" type="text" />
         </div>
+        <div class="phone-number">
+          <h2>Phone number <mark>*</mark></h2>
+          <div class="phone-number-form">
+            <span class="form prefix"><p>+1</p></span>
+            <input id="phone-form" class="form body" type="text" />
+          </div>
+        </div>
+        <div class="pick-up-drop-off-location">
+          <div class="pick-up-location">
+            <h2>Pick up location <mark>*</mark></h2>
+            <input class="form" type="text" />
+          </div>
+          <div class="drop-off-location">
+            <h2>Drop off location <mark>*</mark></h2>
+            <input class="form" type="text" />
+          </div>
+        </div>
+        <div class="flight">
+          <h2>Flight number (if applicable)</h2>
+          <input id="flight-form" class="form" type="text" />
+        </div>
+        <div class="comments">
+          <h2>Any other comments?</h2>
+          <textarea class="form" rows="4" cols="50"></textarea>
+        </div>
+        <div class="carpool">
+          <input class="is-carpool" type="checkbox">
+          <h2>If available, I would like to carpool. </h2>
+        </div>
+        <div class="submit">
+          <a class="submit-button" href="javascript:void(0)" onclick="onSendContactUs()">Request a ride</a>
+        </div>
+        <div class="disclaimer">
+          <p>
+            *Once you request a ride, the ride is not yet confirmed until you hear back from us through email or text.
+          </p>
+        </div>
       </div>
-
-      <!-- <h1>Contact Us</h1>
-      <div class="container">
-        <p class="label">Name</p>
-        <input class="form name-form line-form" type="text" />
-        <p class="label">Email</p>
-        <input class="form email-form line-form" type="text" />
-        <p class="label">Phone Number</p>
-        <div>
-          <input class="form phone-prefix" type="text" value="+1" />
-          <input
-            id="phone-input"
-            class="form phone-form line-form"
-            type="tel"
-          />
-        </div>
-        <p class="label">Message</p>
-        <div>
-          <textarea
-            class="form body-form block-form"
-            rows="4"
-            cols="50"
-          ></textarea>
-          <a class="send-button" href="#c" onclick="onSendContactUs()"
-            ><img src="res/ico/send.svg" style="height: 35px"
-          /></a>
-        </div>
-      </div> -->
+    </section>
+    <section class="copywrite"> 
+      <a href="https://www.facebook.com/citygaltransportation">
+        <image src="res/ico/facebook.svg" style="height: 20px; "></image>
+      </a>
+      <a href="https://www.linkedin.com/in/virginia-klinger-21917b64/">
+        <image src="res/ico/linked-in.svg" style="height: 20px; "></image>
+      </a>
+      <a href="tel:6128401687">
+        <image src="res/ico/phone.svg" style="height: 20px; "></image>
+      </a>
+      <p>
+        © 2021 City Gal Transport. All rights reserved.
+      </p>
     </section>
   </body>
 </html>

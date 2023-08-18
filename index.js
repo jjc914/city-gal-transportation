@@ -26,65 +26,59 @@ function toggleNav() {
 }
 
 window.onload = function() {
-    element = document.getElementById('phone-input');
-    element.addEventListener('keydown', function(event) {
-        if (event.key != 'Backspace' && (element.value.length === 3 || element.value.length === 7)){
-            element.value += '-';
-        }
-    });
-
-    setInputFilter(element, function(value) {
-        return /^\d{0,3}\-{0,1}\d{0,3}\-{0,1}\d{0,4}$/.test(value);
+    phoneForm = document.getElementById('phone-form');
+    phoneForm.addEventListener('input', () => {
+        onPhoneInput(phoneForm);
     });
 }
 
-// https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
-function setInputFilter(textbox, inputFilter) {
-    [ 'input', 'keydown', 'keyup', 'mousedown', 'mouseup', 'select', 'contextmenu', 'drop', 'focusout' ].forEach(function(event) {
-        textbox.addEventListener(event, function(e) {
-            if (inputFilter(this.value)) {
-                // Accepted value.
-                this.oldValue = this.value;
-                this.oldSelectionStart = this.selectionStart;
-                this.oldSelectionEnd = this.selectionEnd;
-            } else if (this.hasOwnProperty('oldValue')) {
-                // Rejected value: restore the previous one.
-                this.value = this.oldValue;
-                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
-            } else {
-                // Rejected value: nothing to restore.
-                this.value = '';
-            }
-        });
-    });
-} 
+var lastPhone = '';
+function onPhoneInput(e) {
+    const phoneDigits = e.value.replace(/\D/g, '');
+    e.value = formatPhone(phoneDigits);
+    lastPhone = e.value;
+}
+
+function formatPhone(digits) {
+    if (digits.length < 1) {
+        return '';
+    } else if (digits.length < 3) {
+        return '(' + digits;
+    } else if (digits.length < 6) {
+        return '(' + digits.slice(0, 3) + ') ' + digits.slice(3);
+    } else if (digits.length < 11) {
+        return '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6);
+    }
+    return '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6, 10);
+}
 
 function onSendContactUs() {
-    const url = `${ROOT_URL}/api/contact-us`;
-    const data = {
-        'first-name': '',
-        'last-name': '',
-        'phone-number': '',
-        'email': 'johndoe@example.com',
-        'pick-up': '',
-        'drop-off': '',
-        'flight': '',
-        'isRideshare': true,
-        'body': ''
-    };
+    console.log("aa");
+    // const url = `${ROOT_URL}/api/contact-us`;
+    // const data = {
+    //     'first-name': '',
+    //     'last-name': '',
+    //     'phone-number': '',
+    //     'email': 'johndoe@example.com',
+    //     'pick-up': '',
+    //     'drop-off': '',
+    //     'flight': '',
+    //     'isRideshare': true,
+    //     'body': ''
+    // };
 
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(responseData => {
-        console.log('Response:', responseData);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    // fetch(url, {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    // })
+    // .then(response => response.json())
+    // .then(responseData => {
+    //     console.log('Response:', responseData);
+    // })
+    // .catch(error => {
+    //     console.error('Error:', error);
+    // });
 }
