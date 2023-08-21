@@ -26,6 +26,7 @@ body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
     background: var(--primary-background-color);
+    line-height: 1.4;
 }
 
 .navbar {
@@ -282,6 +283,26 @@ section {
     }
 }
 
+.pricing {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: var(--accent-color-light);
+    color: var(--text-color-highlight);
+    font-size: 1em;
+}
+
+.pricing .container {
+    width: fit-content;
+    /* margin: auto; */
+    /* margin-left: 10%; */
+}
+
+.pricing .container ul {
+    width: fit-content;
+    margin: 5px;
+    display: inline-block;
+}
+
 .location {
     display: flex;
     align-items: center;
@@ -417,7 +438,7 @@ section {
 
 .contact .container * .form {
     height: 50px;
-    background-color: #F2F2F2;
+    background-color: white;
     border: none;
     border-style: solid;
     border-color: #CFCFCF;
