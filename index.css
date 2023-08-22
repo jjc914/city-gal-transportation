@@ -254,7 +254,6 @@ section {
 }
 
 .about .container {
-    display: flex;
     justify-content: center;
 }
 
@@ -265,7 +264,8 @@ section {
 /* About for desktop */
 @media screen and (min-width: 820px) {
     .about .container {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: auto auto auto;
         gap: 100px;
     }
 }
@@ -273,6 +273,7 @@ section {
 /* About for mobile */
 @media screen and (max-width: 820px) {
     .about .container {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 50px;
