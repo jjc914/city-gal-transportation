@@ -294,7 +294,7 @@ export default async function contactUs(req, res) {
                 from: process.env.EMAIL_ADDRESS,
                 to: 'josh.chasnov@gmail.com',
                 subject: 'Submitted Contact Us Form',
-                text: html,
+                html: html  ,
             };
               
             transporter.sendMail(mailOptions, function(error, info) {
