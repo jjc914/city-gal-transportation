@@ -27,7 +27,7 @@ export default async function contactUs(req, res) {
                     <td style="font-size: 1.5em;">Thank you for reaching out!</td>
                   </tr>
                   <tr>
-                    <td style="width: 10px;">Hi ${body['first-name']}, 
+                    <td style="width: 10px; color: black">Hi ${body['first-name']}, 
                       <br>
                       <br>Your message has been received, and we will reach out as soon as possible. Please make sure your details are correct by reviewing the content of your message displayed below:
                     </td>
@@ -143,7 +143,7 @@ export default async function contactUs(req, res) {
                           </tr>
                           <tr>
                             <td style="font-size: 0.8em; font-weight: 600;">
-                              <input style="display: inline; vertical-align: middle;" checked="checked" disabled="disabled" type="checkbox">
+                              <input style="display: inline; vertical-align: middle; margin-right: 5px; " checked="checked" disabled="disabled" type="checkbox">
                               <div style="display: inline; vertical-align: middle;">If available, I would like to carpool.</div>
                             </td>
                           </tr>

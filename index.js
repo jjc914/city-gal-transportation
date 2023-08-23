@@ -220,7 +220,7 @@ function onSendContactUs() {
         console.log('Response:', responseData);
         document.getElementById('contact-submit-button').classList.remove('disabled');
         document.getElementById('contact-loader').classList.add('hidden');
-        alert('Successfully contacted.');
+        alert('An email has been sent. Thanks for reaching out!');
     })
     .catch(error => {
         console.error('Error:', error);
