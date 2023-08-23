@@ -1,260 +1,136 @@
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Your Message Subject or Title</title>
-      <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
-
-        body {
-            font-family: 'Raleway', sans-serif;
-            line-height: 1.4;
-        }
-
-        h1 {
-            font-size: 1.5em;
-        }
-
-        .frame {
-            width: 70%;
-            height: fit-content;
-            margin: auto;
-        }
-
-        .frame .message mark {
-            color: red;
-            background-color: inherit;
-        }
-
-        .frame .message {
-            width: 100%;
-            height: fit-content;
-            border-width: 1px;
-            border-style: solid;
-            border-color: #afafaf;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-            background-color: #fff3f2;;
-        }
-                
-        .frame .message * h2 {
-            margin: 0px;
-            font-size: 0.8em;
-            font-weight: 600;
-        }
-        
-        .frame .message * .form {
-            height: 50px;
-            width: 100%;
-            background-color: white;
-            border: none;
-            border-style: solid;
-            border-color: #CFCFCF;
-            border-width: 1px;
-            border-radius: 3px;
-            padding-top: 0px;
-            padding-bottom: 0px;
-            padding-left: 10px;
-            padding-right: 10px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 1em;
-        }
-        
-        @media screen and (min-width: 720px) {
-            .frame .message .name {
-                display: grid;
-                grid-template-columns: 40% 40%;
-                column-gap: 30px;
-                row-gap: 2px;
-            }
-
-            .frame .message .pick-up-drop-off-location {
-                display: grid;
-                grid-template-columns: 45% 45%;
-                column-gap: 30px;
-                row-gap: 2px;
-            }
-        }
-
-        @media screen and (max-width: 720px) {
-            .frame .message .name {
-                display: grid;
-                grid-template-columns: 90%;
-                column-gap: 10px;
-                row-gap: 20px;
-            }
-
-            .frame .message .pick-up-drop-off-location {
-                display: grid;
-                grid-template-columns: 90%;
-                column-gap: 10px;
-                row-gap: 20px;
-            }
-        }
-
-        .frame .message .email {
-            display: grid;
-            grid-template-columns: 50%;
-            row-gap: 2px;
-        }
-
-        .frame .message .phone-number {
-            display: grid;
-            grid-template-columns: 810px;
-            row-gap: 2px;
-        }
-
-        .frame .message .phone-number .phone-number-form {
-            display: grid;
-            grid-template-columns: fit-content(100%) 135px;
-        }
-
-        .frame .message .phone-number .phone-number-form .prefix {
-            border-radius: 3px 0px 0px 3px;
-            display: inline-block;
-            vertical-align: middle;
-            text-align: center;
-            padding-left: 2px;
-            padding-right: 2px;
-        }
-
-        .frame .message .phone-number .phone-number-form .prefix p {
-            text-align: center;
-        }
-
-        .frame .message .phone-number .phone-number-form .body {
-            transform: translateX(5px);
-            border-radius: 0px 3px 3px 0px;
-        }
-
-        .frame .message .flight {
-            display: grid;
-            grid-template-columns: 100%;
-            row-gap: 2px;
-        }
-
-        .frame .message .flight .form {
-            width: 65px;
-        }
-
-        .frame .message .comments {
-            display: grid;
-            grid-template-columns: 95%;
-            row-gap: 2px;
-        }
-
-        .frame .message .comments .form {
-            width: 100%;
-            max-width: 100%;
-            min-width: 50%;
-        }
-
-        .frame .message .carpool .is-carpool {
-            display: inline;
-            vertical-align: middle;
-        }
-
-        .frame .message .carpool h2 {
-            display: inline;
-        }
-
-        .copywrite {
-            padding-top: 50px;
-            background-color: white;
-            text-align: center;
-        }
-
-        .copywrite a {
-            margin-left: 15px;
-            margin-right: 15px;
-            text-decoration: none;
-        }
-
-        .copywrite a img {
-            filter: brightness(0);
-        }
-
-        .copywrite p {
-            font-size: 1em;
-        }
-      </style>
-  </head>
-  <body>
-    <div class="frame">
-      <h1>Thank you for reaching out!</h1>
-      <p>
-      Hi ${first-name}, 
-      <br>
-      <br>
-      Your message has been recieved, and we will reach out as soon as possible. Please make sure your details are correct by reviewing the content of your message is displayed below:
-      </p>
-      <div class="message">
-            <div class="name">
-                <div class="first-name">
-                  <h2>Traveller's first name <mark>*</mark></h2>
-                  <input id="first-name-form" class="form" type="text" disabled />
-                </div>
-                <div class="last-name">
-                  <h2>Traveller's last name <mark>*</mark></h2>
-                  <input id="last-name-form" class="form" type="text" disabled />
-                </div>
-              </div>
-              <div class="email">
-                <h2>Email address <mark>*</mark></h2>
-                <input id="email-form" class="form" type="text" disabled />
-              </div>
-              <div class="phone-number">
-                <h2>Phone number <mark>*</mark></h2>
-                <div class="phone-number-form">
-                  <span class="form prefix"><p>+1</p></span>
-                  <input id="phone-form" class="form body" type="text" disabled />
-                </div>
-              </div>
-              <div class="pick-up-drop-off-location">
-                <div class="pick-up-location">
-                  <h2>Pick up location <mark>*</mark></h2>
-                  <input id="pick-up-form" class="form" type="text" disabled />
-                </div>
-                <div class="drop-off-location">
-                  <h2>Drop off location <mark>*</mark></h2>
-                  <input id="drop-off-form" class="form" type="text" disabled />
-                </div>
-              </div>
-              <div class="flight">
-                <h2>Flight number (if applicable)</h2>
-                <input id="flight-form" class="form" type="text" disabled />
-              </div>
-              <div class="comments">
-                <h2>Any other comments?</h2>
-                <textarea id="comments-form" class="form" rows="4" cols="50" disabled></textarea>
-              </div>
-              <div class="carpool">
-                <input id="rideshare-checkbox" class="is-carpool" type="checkbox" disabled />
-                <h2>If available, I would like to carpool. </h2>
-              </div>
-      </div>
-    </div>
-
-    <section class="copywrite"> 
-        <a href="https://www.facebook.com/citygaltransportation">
-          <image src="res/ico/facebook.svg" style="height: 20px; "></image>
-        </a>
-        <a href="https://www.linkedin.com/in/virginia-klinger-21917b64/">
-          <image src="res/ico/linked-in.svg" style="height: 20px; "></image>
-        </a>
-        <a href="tel:6128401687">
-          <image src="res/ico/phone.svg" style="height: 20px; "></image>
-        </a>
-        <p>
-          © 2021 City Gal Transport. All rights reserved.
-        </p>
-      </section>
-  </body>
-</html>
+<body>
+  <div style="overflow: hidden; background-color: white; width: fit-content; height: fit-content; margin: auto; font-size: 1em;">
+    <table style="border-spacing: 10px; width: 100%;">
+      <tbody>
+        <tr>
+          <td style="font-size: 1.5em;">Thank you for reaching out!</td>
+        </tr>
+        <tr>
+          <td>Hi Joshua, 
+            <br>
+            <br>Your message has been received, and we will reach out as soon as possible. Please make sure your details are correct by reviewing the content of your message displayed below:
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table style="width: 10%; height: fit-content; background-color: #fff3f2; padding: 10px; border: 1px solid #afafaf;">
+              <tbody>
+                <tr>
+                  <td>
+                    <table style="width: 400px;">
+                      <tbody>
+                        <tr>
+                          <td style="font-size: 0.8em; font-weight: 600;">Traveller's first name</td>
+                          <td style="font-size: 0.8em; font-weight: 600;">Traveller's last name</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form" style="width: 150px; height: 30px; line-height: 30px; background-color: white; border-radius: 3px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">Alabaster</div>
+                          </td>
+                          <td>
+                            <div class="form" style="width: 150px; height: 30px; line-height: 30px; background-color: white; border-radius: 3px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">asdf</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table style="width: 400px;">
+                      <tbody>
+                        <tr>
+                          <td style="font-size: 0.8em; font-weight: 600;">Email address</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="width: 300px; height: 30px; line-height: 30px; background-color: white; border-radius: 3px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">josh.chasnov@gmail.com</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table style="width: 400px;">
+                      <tbody>
+                        <tr>
+                          <td style="font-size: 0.8em; font-weight: 600;">Phone number</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="display: inline-block; width: fit-content; height: 30px; line-height: 30px; background-color: white; border-radius: 3px 0px 0px 3px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">+1</div>
+                            <div style="display: inline-block; width: fit-contentpx; height: 30px; line-height: 30px; background-color: white; border-radius: 0px 3px 3px 0px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; transform: translateX(-6px); padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">(999) 999-9999</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table style="width: 100%;">
+                      <tbody>
+                        <tr>
+                          <td style="font-size: 0.8em; font-weight: 600;">Pick up location</td>
+                          <td style="font-size: 0.8em; font-weight: 600;">Drop off location</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form" style="width: 300px; height: 30px; line-height: 30px; background-color: white; border-radius: 3px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">Alabaster</div>
+                          </td>
+                          <td>
+                            <div class="form" style="width: 300px; height: 30px; line-height: 30px; background-color: white; border-radius: 3px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">asdf</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table style="width: 400px;">
+                      <tbody>
+                        <tr>
+                          <td style="font-size: 0.8em; font-weight: 600;">Flight number (if applicable)</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="display: inline-block; width: 80px; height: 30px; line-height: 30px; background-color: white; border-radius: 3px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">CA 9999</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table style="width: 95%;">
+                      <tbody>
+                        <tr>
+                          <td style="font-size: 0.8em; font-weight: 600;">Any other comments?</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="display: inline-block; width: 100%; height: fit-content; min-height: 20px; background-color: white; border-radius: 3px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; padding: 5px 10px 5px 10px; border: 1px solid #cfcfcf;">&nbsp;</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-size: 0.8em; font-weight: 600;">
+                    <input style="display: inline; vertical-align: middle;" disabled="disabled" type="checkbox">
+                    <div style="display: inline; vertical-align: middle;">If available, I would like to carpool.</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
+</body>
