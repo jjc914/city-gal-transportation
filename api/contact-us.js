@@ -11,7 +11,7 @@ export default async function contactUs(req, res) {
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: process.env.EMAIL_ADDRESS,
+                    user: process.env.SENDER_EMAIL_ADDRESS,
                     pass: process.env.EMAIL_PASSWORD,
                 },
             });
@@ -82,7 +82,7 @@ export default async function contactUs(req, res) {
                                   <tr>
                                     <td>
                                       <div style="display: inline-block; width: fit-content; height: 30px; line-height: 30px; background-color: white; border-radius: 3px 0px 0px 3px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">+1</div>
-                                      <div style="display: inline-block; width: fit-contentpx; height: 30px; line-height: 30px; background-color: white; border-radius: 0px 3px 3px 0px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; transform: translateX(-6px); padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">${body['phone-number']}</div>
+                                      <div style="display: inline-block; width: fit-contentpx; height: 30px; line-height: 30px; background-color: white; border-radius: 0px 3px 3px 0px; font-family: Georgia,Times New Roman,Times,serif; font-size: 1em; padding: 0px 10px 0px 10px; border: 1px solid #cfcfcf;">${body['phone-number']}</div>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -156,14 +156,34 @@ export default async function contactUs(req, res) {
             </div>
             `
 
-            const mailOptions = {
-                from: process.env.EMAIL_ADDRESS,
-                to: 'josh.chasnov@gmail.com',
+            const mainMailOptions = {
+                from: process.env.SENDER_EMAIL_ADDRESS,
+                to: process.env.RECEIVER_EMAIL_ADDRESS,
                 subject: 'Submitted Contact Us Form',
                 html: html,
             };
+
+            const confirmationMailOptions = {
+                from: process.env.SENDER_EMAIL_ADDRESS,
+                to: body['email'],
+                subject: 'Welcome to City Gal Transporatation!',
+                html: html,
+            }
               
-            transporter.sendMail(mailOptions, function(error, info) {
+            transporter.sendMail(mainMailOptions, function(error, info) {
+                if (error) {
+                    console.error('Error sending email: ', error);
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', 'application/json');
+                    res.json({ message: error });
+                } else {
+                    console.log('Email sent: ', info.response);
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', 'application/json');
+                    res.json({ message: 'Email sent successfully. ' });
+                }
+            });
+            transporter.sendMail(confirmationMailOptions, function(error, info) {
                 if (error) {
                     console.error('Error sending email: ', error);
                     res.statusCode = 200;
