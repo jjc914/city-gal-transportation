@@ -153,7 +153,7 @@ export default async function contactUs(req, res) {
         </tr>
         <tr>
           <td style="width: 10px; color: grey; font-size: 0.9em;">
-            Note: Terminal one pickup location is departure door 4. Terminal two pickup location is departure door 8. 
+            *Note: Terminal one pickup location is departure door 4. Terminal two pickup location is departure door 8. 
           </td>
         </tr>
       </tbody>
