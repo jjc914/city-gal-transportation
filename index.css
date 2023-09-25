@@ -500,7 +500,7 @@ section {
 }
 
 .contact .container .flight .form {
-    width: 65px;
+    width: 100%;
 }
 
 .contact .container .comments {
@@ -604,6 +604,13 @@ section {
         column-gap: 30px;
         row-gap: 2px;
     }
+
+    .contact .container .flight {
+        display: grid;
+        grid-template-columns: 35% 35%;
+        column-gap: 30px;
+        row-gap: 2px;
+    }
 }
 
 @media screen and (max-width: 720px) {
@@ -615,6 +622,13 @@ section {
     }
 
     .contact .container .pick-up-drop-off-location {
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap: 10px;
+        row-gap: 20px;
+    }
+
+    .contact .container .flight {
         display: grid;
         grid-template-columns: 100%;
         column-gap: 10px;

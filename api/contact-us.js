@@ -114,7 +114,7 @@ export default async function contactUs(req, res) {
                               <table style="width: 400px;">
                                 <tbody>
                                   <tr>
-                                    <td style="font-size: 0.8em; font-weight: 600;">Flight number (if applicable)</td>
+                                    <td style="font-size: 0.8em; font-weight: 600;">Flight (if applicable)</td>
                                   </tr>
                                   <tr>
                                     <td>

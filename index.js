@@ -197,15 +197,15 @@ function onSendContactUs() {
 
     const url = `${ROOT_URL}/api/contact-us`;
     const data = {
-        'first-name': document.getElementById('first-name-form').value,
-        'last-name': document.getElementById('last-name-form').value,
-        'phone-number': document.getElementById('phone-form').value,
-        'email': document.getElementById('email-form').value,
-        'pick-up': document.getElementById('pick-up-form').value,
-        'drop-off': document.getElementById('drop-off-form').value,
-        'flight': document.getElementById('flight-form').value,
+        'first-name': document.getElementById('first-name-form').value.trim(),
+        'last-name': document.getElementById('last-name-form').value.trim(),
+        'phone-number': document.getElementById('phone-form').value.trim(),
+        'email': document.getElementById('email-form').value.trim(),
+        'pick-up': document.getElementById('pick-up-form').value.trim(),
+        'drop-off': document.getElementById('drop-off-form').value.trim(),
+        'flight': document.getElementById('airline-form').value.trim() + ' ' + document.getElementById('flight-form').value.trim(),
         'is-rideshare': document.getElementById('rideshare-checkbox').checked,
-        'body': document.getElementById('comments-form').value
+        'body': document.getElementById('comments-form').value.trim()
     };
 
     fetch(url, {
